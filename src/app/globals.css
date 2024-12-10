@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes pulse-moderate {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-pulse-moderate {
+  animation: pulse-moderate 2s infinite;
+}
+.fc {
+  --fc-border-color: #e5e7eb;
+  --fc-button-bg-color: #11404E;
+  --fc-button-border-color: #11404E;
+  --fc-button-hover-bg-color: #1a5c70;
+  --fc-button-hover-border-color: #1a5c70;
+  --fc-button-active-bg-color: #1a5c70;
+  --fc-button-active-border-color: #1a5c70;
+  --fc-event-bg-color: #11404E;
+  --fc-event-border-color: #11404E;
+  --fc-today-bg-color: rgba(17, 64, 78, 0.1);
+  --fc-page-bg-color: #fff;
+  --fc-list-event-hover-bg-color: #f3f4f6;
+}
+
+.fc .fc-toolbar {
+  @apply gap-4 flex-wrap;
+}
+
+.fc .fc-toolbar-title {
+  @apply text-xl font-bold text-gray-900;
+}
+
+.fc .fc-button {
+  @apply shadow-sm rounded-lg text-sm font-medium transition-colors;
+}
+
+.fc .fc-button-primary {
+  @apply bg-[#11404E] border-[#11404E] hover:bg-[#1a5c70] hover:border-[#1a5c70];
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  @apply bg-[#1a5c70] border-[#1a5c70];
+}
+
+.fc .fc-daygrid-day-number {
+  @apply text-sm text-gray-700;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  @apply bg-blue-50;
+}
+
+.fc-theme-standard td, 
+.fc-theme-standard th {
+  @apply border border-gray-200;
+}
+
+.fc .fc-scrollgrid {
+  @apply border-gray-200;
+}
+
+.fc-event {
+  @apply cursor-pointer transition-opacity hover:opacity-90;
+}
+
+@media (max-width: 640px) {
+  .fc .fc-toolbar {
+    @apply flex-col items-stretch;
+  }
+  
+  .fc .fc-toolbar-title {
+    @apply text-center;
+  }
+}
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
